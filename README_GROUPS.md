@@ -6,7 +6,7 @@
 * Group 4: adjr, aguh, fefa
 * Group 5: rogy, luel, skas
 * Group 6: ojoh, asly, tuho
-* Group 7: phla, okre, sibh
+* Group 7: okre, sibh
 * Group 8: jric, mfjo, rasni
 * Group 9: kbej, jklo, crco
 * Group 10: midf, stmp, ehel
@@ -32,7 +32,7 @@
 * Group 30: dadh, shho, nkar
 * Group 31: mbjn, rafa, mlth
 * Group 32: frhc, selb, adrka
-* Group 33: vist, unla, mroa
+* Group 33: vist, mroa
 * Group 34: gues, erja, rakt
 * Group 35: eikb, phimo, ssbo
 * Group 36: clly, asjo, nkrj
@@ -45,3 +45,4 @@
 * Group 43: seel, omac, nidd
 * Group 44: husa, noms, esmi
 * Group 45: jevb, teim, tael, asgm
+* Group 46: unla, phla
