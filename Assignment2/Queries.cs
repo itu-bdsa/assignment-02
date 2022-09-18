@@ -16,4 +16,10 @@ public class Queries
 
         return query;
     }
+
+    public static int FirstSithLord(WizardCollection wizards)
+    {
+        // var firstSithLord = wizards.Where(wizard => wizard.Name.StartsWith("Darth")).MinBy(wizard => wizard.Year);
+        throw new NotImplementedException();
+    }
 }
