@@ -71,4 +71,15 @@ public class ExtensionsTests
 
         actual.Should().Be(expected);
     }
+
+    [Fact]
+    public void WordCount_should_ignore_non_letters()
+    {
+        var line = "There are 6 words in this sentence !!!";
+        var expected = 6;
+
+        var actual = line.WordCount();
+
+        actual.Should().Be(expected);
+    }
 }

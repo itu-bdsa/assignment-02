@@ -1,4 +1,5 @@
 namespace Assignment2;
+using System.Text.RegularExpressions;
 
 public static class Extensions
 {
@@ -26,11 +27,13 @@ public static class Extensions
 
     public static bool IsSecure(this Uri uri)
     {
-        throw new NotImplementedException();
+        return uri.Scheme.Equals("https");
     }
 
     public static int WordCount(this string toCount)
     {
-        throw new NotImplementedException();
+        string pattern = @"[A-Za-z]+";
+        MatchCollection matches = Regex.Matches(input: toCount, pattern: pattern);
+        return matches.Count;
     }
 }
