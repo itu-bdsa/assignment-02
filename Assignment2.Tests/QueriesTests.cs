@@ -11,7 +11,6 @@ public class QueriesTests
         var actual = Queries.InventedByExt(wizards, "Rowling");
 
         actual.Should().BeEquivalentTo(expected);
-
     }
 
     [Fact]
@@ -23,6 +22,5 @@ public class QueriesTests
         var actual = Queries.InventedByLINQ(wizards, "Rowling");
 
         actual.Should().BeEquivalentTo(expected);
-
     }
 }
