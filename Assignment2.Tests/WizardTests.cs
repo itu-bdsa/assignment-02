@@ -7,11 +7,11 @@ public class WizardTests
     {
         var wizards = WizardCollection.Create();
 
-        Assert.Equal(2, wizards.Count());
+        Assert.Equal(12, wizards.Count());
     }
 
     [Theory]
-    [InlineData("Darth Vader", "Star Wars", 1977, "George Lucas")]
+    [InlineData("Darth Vader", "Star Wars: Episode IV - A New Hope", 1977, "George Lucas")]
     [InlineData("Sauron", "The Fellowship of the Ring", 1954, "J.R.R. Tolkien")]
     public void Spot_check_wizards(string name, string medium, int year, string creator)
     {

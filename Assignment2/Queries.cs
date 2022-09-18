@@ -2,8 +2,13 @@ namespace Assignment2;
 
 public class Queries
 {
-    public IEnumerable<string> InventedByExtensions(WizardCollection wizards, string name) 
+    public static IEnumerable<string> InventedByExt(WizardCollection wizards, string name)
     {
-        wizards.
+        throw new NotImplementedException();
+    }
+
+    public static IEnumerable<string> InventedByLINQ(WizardCollection wizards, string name)
+    {
+        throw new NotImplementedException();
     }
 }
