@@ -5,24 +5,12 @@ public static class Extensions
 {
     public static IEnumerable<T> Filter<T>(this IEnumerable<T> items, Predicate<T> predicate)
     {
-        foreach (var item in items)
-        {
-            if (predicate(item))
-            {
-                yield return item;
-            }
-        }
+        return items.Where(item => predicate(item));
     }
 
     public static IEnumerable<T> Flatten<T>(this IEnumerable<IEnumerable<T>> items)
     {
-        foreach (var item in items)
-        {
-            foreach (var i in item)
-            {
-                yield return i;
-            }
-        }
+        return items.SelectMany(i => i);
     }
 
     public static bool IsSecure(this Uri uri)
