@@ -1,4 +1,4 @@
-// File for delegates (Exercise 'C# - Delegates / Anonymous methods'), used in delegate tests
+// File for delegates (Exercise 'C# - Delegates / Anonymous methods'), used in DelegatesTests.cs
 
 namespace Assignment2;
 
