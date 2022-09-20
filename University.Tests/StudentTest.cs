@@ -40,4 +40,11 @@ public class StudentTests
         student.Status.Should().Be(StudentStatus.New);
     }
 
+    [Fact]
+    public void Student_ToString()
+    {
+        var student = new Student(1, "John", "Doe", StartDate: new DateTime(2020, 01, 01), EndDate: new DateTime(2022, 01, 01), GraduationDate: new DateTime(2023, 01, 01));
+        student.ToString().Should().Be("1 John Doe - Status: Dropout Started: 01-01-2020 End: 01-01-2022 Graduation: 01-01-2023");
+    }
+
 }
