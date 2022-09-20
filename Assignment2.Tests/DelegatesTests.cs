@@ -88,4 +88,69 @@ public class DelegatesTests
         // Then
         product.Should().Be(-10.5);
     }
+
+    [Fact]
+    public void NumericallyEquivalent_42_Equals_42()
+    {
+        // Given
+        var a = 42; var b = "42";
+    
+        // When
+        var result = Delegates.NumericallyEqualStringAndInteger(a, b);
+    
+        // Then
+        result.Should().Be(true);
+    }
+
+    [Fact]
+    public void NumericallyEquivalent_0042_Equals_42()
+    {
+        // Given
+        var a = 42; var b = "0042";
+    
+        // When
+        var result = Delegates.NumericallyEqualStringAndInteger(a, b);
+    
+        // Then
+        result.Should().Be(true);
+    }
+
+    [Fact]
+    public void NumericallyEquivalent_4200_Does_Not_Equal_42()
+    {
+        // Given
+        var a = 42; var b = "4200";
+    
+        // When
+        var result = Delegates.NumericallyEqualStringAndInteger(a, b);
+    
+        // Then
+        result.Should().Be(false);
+    }
+
+    [Fact]
+    public void NumericallyEquivalent_abc_Does_Not_Equal_42()
+    {
+        // Given
+        var a = 42; var b = "abc";
+    
+        // When
+        var result = Delegates.NumericallyEqualStringAndInteger(a, b);
+    
+        // Then
+        result.Should().Be(false);
+    }
+
+    [Fact]
+    public void NumericallyEquivalent_With_Space_Still_Works()
+    {
+        // Given
+        var a = 12; var b = " 012";
+    
+        // When
+        var result = Delegates.NumericallyEqualStringAndInteger(a, b);
+    
+        // Then
+        result.Should().Be(true);
+    }
 }

@@ -29,4 +29,21 @@ public static class Delegates {
 
         return del(a,b);
     }
+
+    public delegate bool NumericallyEquivalent(int a, string b);
+
+    public static bool NumericallyEqualStringAndInteger(int a, string b) {
+        var del = new NumericallyEquivalent(
+            delegate (int a, string b) {
+                try {
+                    return a == Int32.Parse(b);
+                } catch (FormatException) {
+                    return false;
+                }
+                
+            }
+        );
+
+        return del(a, b);
+    }
 }
