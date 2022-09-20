@@ -1,4 +1,5 @@
 ﻿namespace University;
+using static StudentStatus;
 public class Student
 {
 
@@ -31,10 +32,6 @@ public class Student
             this.Status = StudentStatus.Active;
     }
 
-    public enum StudentStatus
-    {
-        New, Active, Dropout, Graduated
-    }
 
     public override string ToString()
     {
