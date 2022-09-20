@@ -5,6 +5,7 @@ public class DelegatesTests
     [Fact]
     public void isReverseStringTest() // 1.
     {
+        // Arrange
         ModifyString reverseString = new ModifyString((s) =>
         {
             char[] charArray = s.ToCharArray(); // convert string to char array
@@ -12,22 +13,36 @@ public class DelegatesTests
             return new string(charArray); // convert char array to string and return
         });
 
-        reverseString("Hello World!").Should().Be("!dlroW olleH");
+        // Act
+        string reversedString = reverseString("Hello World!");
+
+        // Assert
+        reversedString.Should().Be("!dlroW olleH");
     }
 
     [Fact]
     public void isProduct() // 2. 
     {
+        // Arrange
         DecimalOperation product = new DecimalOperation((a, b) => a * b);
 
-        product(2, 3).Should().Be(6);
+        // Act
+        decimal productOfTwoThree = product(2, 3);
+
+        // Assert
+        productOfTwoThree.Should().Be(6);
     }
 
     [Fact]
     public void isStringEqualToInt() // 3.
     {
+        // Arrange
         IntStringCompare stringEqualToInt = new IntStringCompare((i, s) => i == int.Parse(s));
 
-        stringEqualToInt(42, " 0042").Should().BeTrue();
+        // Act
+        bool string42EqualToInt = stringEqualToInt(42, " 0042");
+
+        // Arrange
+        string42EqualToInt.Should().BeTrue();
     }
 }
