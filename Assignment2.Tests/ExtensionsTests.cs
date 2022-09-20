@@ -45,4 +45,19 @@ public class ExtensionsTests
         var actual = list.Filter(x => DateTime.IsLeapYear(x));
         actual.Should().BeEquivalentTo(expected);
     }
+
+    [Fact]
+    public void IsSecure_true(){ 
+        var uri = new Uri("https://www.google.com");
+        var actual = uri.IsSecure();
+        actual.Should().BeTrue();
+    }
+
+    [Fact]
+    public void IsSecure_false(){ 
+        var uri = new Uri("http://www.google.com");
+        var actual = uri.IsSecure();
+        actual.Should().BeFalse();
+    }
+
 }
