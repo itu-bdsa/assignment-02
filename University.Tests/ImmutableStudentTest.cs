@@ -2,6 +2,16 @@ namespace University.Tests;
 
 public class ImmutableStudentTest
 {
+    // THIS FAILS DONT KNOW HOW TO CHECK FOR THROW PROPERLY
+    // [Fact]
+    // public void Try_Reassign_Id()
+    // {
+    //     var student = new ImmutableStudent(1, "John", "Doe", StudentStatus.Active, new DateTime(2020, 01, 01), new DateTime(2022, 01, 01), new DateTime(2023, 01, 01));
+    //     student.Id.Should().Be(1);
+    //     var action = () => student.Id = 2;
+    //     action.Should().Throw<Exception>().WithMessage("Cannot assign to property 'University.ImmutableStudent.Id' because it is a readonly or const field");
+
+    // }
 
     [Fact]
     public void Equality_same()
