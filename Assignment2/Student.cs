@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment2
 {
-    public readonly record struct ImmutableStudent
+    public record ImmutableStudent
     {
         public ImmutableStudent(int Id, string GivenName, string SurName, DateTime StartDate, DateTime EndDate, DateTime GraduationDate)
         {
@@ -15,7 +15,7 @@ namespace Assignment2
             this.SurName = SurName;
             this.StartDate = StartDate;
             this.EndDate = EndDate;
-            this.GraduationDate = GraduationDate;            
+            this.GraduationDate = GraduationDate;
         }
 
         public int Id { get; init; }
@@ -43,6 +43,36 @@ namespace Assignment2
         public DateTime EndDate { get; init; }
 
         public DateTime GraduationDate { get; init; }
+    }
+
+    public class Student
+    {
+        public int Id { get; init; }
+        public string GivenName { get; set; }
+
+        public string SurName { get; set; }
+
+        public Status Status
+        {
+            get
+            {
+                bool newStudent = StartDate.Date == DateTime.Now.Date;
+                bool graduated = GraduationDate.Date <= DateTime.Now.Date;
+                bool dropout = !graduated && EndDate.Date <= DateTime.Now.Date && EndDate > DateTime.MinValue;
+                bool active = !graduated && !dropout;
+
+                if (newStudent) return Status.New;
+                if (active) return Status.Active;
+                if (dropout) return Status.Dropout;
+                return Status.Graduated;
+            }
+        }
+
+        public DateTime StartDate { get; set; }
+
+        public DateTime EndDate { get; set; }
+
+        public DateTime GraduationDate { get; set; }
 
 
         public override string ToString()
@@ -52,43 +82,8 @@ namespace Assignment2
     }
 }
 
-public class Student
-{
-    public int Id { get; init; }
-    public string GivenName { get; set; }
-
-    public string SurName { get; set; }
-
-    public Status Status
-    {
-        get
-        {
-            bool newStudent = StartDate.Date == DateTime.Now.Date;
-            bool graduated = GraduationDate.Date <= DateTime.Now.Date;
-            bool dropout = !graduated && EndDate.Date <= DateTime.Now.Date && EndDate > DateTime.MinValue;
-            bool active = !graduated && !dropout;
-
-            if (newStudent) return Status.New;
-            if (active) return Status.Active;
-            if (dropout) return Status.Dropout;
-            return Status.Graduated;
-        }
-    }
-
-    public DateTime StartDate { get; set; }
-
-    public DateTime EndDate { get; set; }
-
-    public DateTime GraduationDate { get; set; }
-
-
-    public override string ToString()
-    {
-        return $"Student id: {Id}, full name: {GivenName} {SurName}";
-    }
-}
-
 public enum Status
 {
     New, Active, Dropout, Graduated
 }
+
