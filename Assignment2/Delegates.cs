@@ -15,6 +15,18 @@ public static class Delegates {
             }
         );
 
-        reverse.Invoke(arg);
+        reverse(arg);
+    }
+
+    public delegate double GetProduct(double a, double b);
+
+    public static double ProductOfTwoNumbers(double a, double b) {
+        var del = new GetProduct(
+            delegate (double a, double b) {
+                return a * b;
+            }
+        );
+
+        return del(a,b);
     }
 }
