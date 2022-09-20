@@ -1,10 +1,10 @@
 namespace Assignment2;
 
-public class Queries
+public static class Queries
 {
-    public static IEnumerable<string> InventedByExt(WizardCollection wizards, string name)
+    public static IEnumerable<string> InventedByRowlingExt(this WizardCollection wizards)
     {
-        return wizards.Where(wizard => wizard.Creator.Contains(name)).Select(wizard => wizard.Name);
+        return wizards.Where(wizard => wizard.Creator.Contains("Rowling")).Select(wizard => wizard.Name);
     }
 
     public static IEnumerable<string> InventedByLINQ(WizardCollection wizards, string name)
