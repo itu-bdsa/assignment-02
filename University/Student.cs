@@ -1,4 +1,4 @@
-namespace University;
+﻿namespace University;
 public class Student
 {
 
@@ -19,6 +19,16 @@ public class Student
         this.EndDate = EndDate;
         this.GraduationDate = GraduationDate;
 
+        var currentDate = DateTime.Now;
+
+        if (EndDate < GraduationDate)
+            this.Status = StudentStatus.Dropout;
+        else if (GraduationDate < currentDate)
+            this.Status = StudentStatus.Graduated;
+        else if (StartDate >= currentDate)
+            this.Status = StudentStatus.New;
+        else
+            this.Status = StudentStatus.Active;
     }
 
     public enum StudentStatus
@@ -26,4 +36,13 @@ public class Student
         New, Active, Dropout, Graduated
     }
 
+    public override string ToString()
+    {
+        return $"{Id} {GivenName} {Surname} - Status: {Status} Started: {StartDate.ToShortDateString()} End: {EndDate.ToShortDateString()} Graduation: {GraduationDate.ToShortDateString()}";
+    }
 }
+
+
+
+
+
