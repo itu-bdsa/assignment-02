@@ -1,5 +1,4 @@
 namespace Student.Tests;
-using static Status;
 
 public class StudentTests
 {
@@ -8,7 +7,7 @@ public class StudentTests
     {
         var student = new Student(3, "Gert", "Sørensen", new DateTime(2023, 09, 01), null, new DateTime(2026, 07, 30));
         var status = student.Status;
-    
+
 
     }
 
@@ -16,11 +15,11 @@ public class StudentTests
     public void Student_status_should_be_active()
     {
         // Arrange
-        var student = new Student(3, "Gert", "Sørensen", new DateTime(2020, 01, 01), null, new DateTime(2025, 01, 01));
+        var student = new Student(3, "Gert", "Sørens test the built-in equality cen", new DateTime(2020, 01, 01), null, new DateTime(2025, 01, 01));
 
         // Act
         var status = student.Status;
-        
+
         // Assert
         status.Should().Be(Active);
     }
@@ -33,7 +32,7 @@ public class StudentTests
 
         // Act
         var status = student.Status;
-        
+
         // Assert
         status.Should().Be(Dropout);
     }
@@ -46,7 +45,7 @@ public class StudentTests
 
         // Act
         var status = student.Status;
-        
+
         // Assert
         status.Should().Be(Graduated);
     }
@@ -56,7 +55,7 @@ public class StudentTests
     {
         // Arrange
         var student = new Student(123, "Gert", "Sørensen", new DateTime(2016, 01, 01), new DateTime(2019, 01, 01), new DateTime(2019, 01, 01));
-    
+
         // Act
         var expected = "[123] Gert Sørensen | Graduated";
         var actual = student.ToString();

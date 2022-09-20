@@ -45,7 +45,7 @@ public class ExtensionsTests
     public void IsSecure_given_stack_overflow_returns_true()
     {
         Uri uri = new Uri("https://stackoverflow.com");
-        
+
         bool actual = uri.IsSecure();
 
         actual.Should().Be(true);
@@ -55,7 +55,7 @@ public class ExtensionsTests
     public void IsSecure_given_insecure_site_returns_false()
     {
         var uri = new Uri("http://enusikkerside.dk");
-        
+
         var actual = uri.IsSecure();
 
         actual.Should().Be(false);
@@ -67,7 +67,7 @@ public class ExtensionsTests
         var lipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
         var expected = 19;
 
-        var actual = lipsum.WordCount(); 
+        var actual = lipsum.WordCount();
 
         actual.Should().Be(expected);
     }
