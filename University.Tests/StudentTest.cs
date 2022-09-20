@@ -1,6 +1,6 @@
+namespace University.Tests;
 using static University.Student;
 
-namespace University.Tests;
 public class StudentTests
 {
 
