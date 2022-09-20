@@ -2,11 +2,9 @@ namespace Assignment2;
 using System;
 public class Delegates
 {
-    public delegate void anonymousReverse(string str);
-    // Main method
-    // An anonymous method with one parameter
-    anonymousReverse ar = delegate (string str)
-    {
-        Console.WriteLine(new String(str.ToCharArray().Reverse().ToArray()));
-    };
+
+    public static reverse stringReverse = new reverse(x => new String(x.ToCharArray().Reverse().ToArray()));
+    public static Func<string,string> stringReverseLambda = (x => new String(x.ToCharArray().Reverse().ToArray()));
+
+    public delegate string reverse(string s);
 }
