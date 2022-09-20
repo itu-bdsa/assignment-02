@@ -60,4 +60,12 @@ public class ExtensionsTests
         actual.Should().BeFalse();
     }
 
+    [Fact]
+    public void WordCount_Hello_world_11()
+    {
+        var input = "Hello, world!";
+        var actual = input.WordCount();
+        actual.Should().Be(2);
+    }
+
 }
