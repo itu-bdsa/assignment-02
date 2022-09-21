@@ -1,29 +1,18 @@
 namespace Assignment2.Tests;
+using static Assignment2.Delegates;
 
 public class DelegatesTests
 {   
-    //These tests were made for Func delegates.
-    //How do you unit test for prints to the console?
-    /*[Fact]
+    //Warning! If one unit test fails, this will also fail
+    [Fact]
     public void ReverseOrder_Should_Succeed()
     {
-        //Arrange
-        var expected = "moT";
-        //Act
-        var output = Assignment2.Delegates.ReverseOrder("Tom");
-        //Assert
-        output.Should().BeEquivalentTo(expected);
+        var stringWriter = new StringWriter();
+        Console.SetOut(stringWriter);
+
+        ReverseOrder("Tom");
+        Assert.Equal("moT\r\n", stringWriter.ToString());
     }
-    [Fact]
-    public void ReverseOrder_Should_Fail()
-    {
-        //Arrange
-        var expected = "moT";
-        //Act
-        var output = Assignment2.Delegates.ReverseOrder("Tomm");
-        //Assert
-        output.Should().NotBeEquivalentTo(expected);
-    }*/
     [Fact]
     public void ProductOfTwoDoubles_Should_Be_6_25()
     {
@@ -62,8 +51,8 @@ public class DelegatesTests
         //Arrange
         var expected = true;
         //Act
-        var output = Assignment2.Delegates.NumericallyEqual(420, "0042");
+        var output = Assignment2.Delegates.NumericallyEqual(422, "0042");
         //Assert
-        output.Should().Be(expected);
+        output.Should().NotBe(expected);
     }
 }
