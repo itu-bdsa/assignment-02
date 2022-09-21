@@ -14,7 +14,7 @@ public class DelegatesTests
     public void Test2()
     {
         var actualResult = Delegate.productDoubleDelegate(3.3,3.3);
-        var expected = 9.9;
+        var expected = 10.89;
         actualResult.Should().Be(expected);
     }
 
