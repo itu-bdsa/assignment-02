@@ -3,7 +3,7 @@ namespace Assignment2.Tests;
 public class WizardTests
 {
     [Fact]
-    public void WizardCollection_contains_2_wizards()
+    public void WizardCollection_contains_12_wizards()
     {
         var wizards = WizardCollection.Create();
 
