@@ -7,10 +7,6 @@ public class Delegate{
     public static Func <int, string, bool> equalBoolDelegate = (i,x) => {
         x = x.TrimStart('0');
         int c = Int32.Parse(x);
-        if (i == c) {
-            return true;
-        } else {
-            return false;
-        }
-    };
+        return i == c;
+        };
 }
