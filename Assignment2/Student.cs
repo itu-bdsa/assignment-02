@@ -6,22 +6,8 @@ using System.Threading.Tasks;
 
 namespace Assignment2
 {
-    public record ImmutableStudent
+    public record ImmutableStudent(int Id, string GivenName, string SurName, DateTime StartDate, DateTime EndDate, DateTime GraduationDate)
     {
-        public ImmutableStudent(int Id, string GivenName, string SurName, DateTime StartDate, DateTime EndDate, DateTime GraduationDate)
-        {
-            this.Id = Id;
-            this.GivenName = GivenName;
-            this.SurName = SurName;
-            this.StartDate = StartDate;
-            this.EndDate = EndDate;
-            this.GraduationDate = GraduationDate;
-        }
-
-        public int Id { get; init; }
-        public string GivenName { get; init; }
-        public string SurName { get; init; }
-
         public Status Status
         {
             get
@@ -37,12 +23,6 @@ namespace Assignment2
                 return Status.Graduated;
             }
         }
-
-        public DateTime StartDate { get; init; }
-
-        public DateTime EndDate { get; init; }
-
-        public DateTime GraduationDate { get; init; }
     }
 
     public class Student
