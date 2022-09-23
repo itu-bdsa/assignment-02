@@ -16,7 +16,7 @@
 * Group 14: nihp, amdh, jwni
 * Group 15: frjo, json, behv
 * Group 16: mhsi, atro, hcan
-* Group 17: reer, laku, frepe
+* Group 17: laku, frepe
 * Group 18: ahad, aldy, tuka
 * Group 19: mhvl, jawb, luha
 * Group 20: tcla, olfw, hast
